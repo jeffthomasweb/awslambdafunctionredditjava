@@ -5,32 +5,33 @@ import lxml
 
 def lambda_handler(event, context):
     a = feedparser.parse("https://reddit.com/r/java.rss")
-    summary_list = 'Title: ' + a.entries[0].title + '. ' + '\n' + 'Post: ' + a.entries[0].summary + '\n' + a.entries[0].link +  '.\n' + '\n'\
-    + 'Title: ' + a.entries[1].title + '. ' + '\n' + 'Post: ' + a.entries[1].summary + '\n' + a.entries[1].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[2].title + '. ' + '\n' + 'Post: ' + a.entries[2].summary + '\n' + a.entries[2].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[3].title + '. ' + '\n' + 'Post: ' + a.entries[3].summary + '\n' + a.entries[3].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[4].title + '. ' + '\n' + 'Post: ' + a.entries[4].summary + '\n' + a.entries[4].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[5].title + '. ' + '\n' + 'Post: ' + a.entries[5].summary + '\n' + a.entries[5].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[6].title + '. ' + '\n' + 'Post: ' + a.entries[6].summary + '\n' + a.entries[6].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[7].title + '. ' + '\n' + 'Post: ' + a.entries[7].summary + '\n' + a.entries[7].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[8].title + '. ' + '\n' + 'Post: ' + a.entries[8].summary + '\n' + a.entries[8].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[9].title + '. ' + '\n' + 'Post: ' + a.entries[9].summary + '\n' + a.entries[9].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[10].title + '. ' + '\n' + 'Post: ' + a.entries[10].summary + '\n' + a.entries[10].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[11].title + '. ' + '\n' + 'Post: ' + a.entries[11].summary + '\n' + a.entries[11].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[12].title + '. ' + '\n' + 'Post: ' + a.entries[12].summary + '\n' + a.entries[12].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[13].title + '. ' + '\n' + 'Post: ' + a.entries[13].summary + '\n' + a.entries[13].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[14].title + '. ' + '\n' + 'Post: ' + a.entries[14].summary + '\n' + a.entries[14].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[15].title + '. ' + '\n' + 'Post: ' + a.entries[15].summary + '\n' + a.entries[15].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[16].title + '. ' + '\n' + 'Post: ' + a.entries[16].summary + '\n' + a.entries[16].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[17].title + '. ' + '\n' + 'Post: ' + a.entries[17].summary + '\n' + a.entries[17].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[18].title + '. ' + '\n' + 'Post: ' + a.entries[18].summary + '\n' + a.entries[18].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[19].title + '. ' + '\n' + 'Post: ' + a.entries[19].summary + '\n' + a.entries[19].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[20].title + '. ' + '\n' + 'Post: ' + a.entries[20].summary + '\n' + a.entries[20].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[21].title + '. ' + '\n' + 'Post: ' + a.entries[21].summary + '\n' + a.entries[21].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[22].title + '. ' + '\n' + 'Post: ' + a.entries[22].summary + '\n' + a.entries[22].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[23].title + '. ' + '\n' + 'Post: ' + a.entries[23].summary + '\n' + a.entries[23].link + ' .\n' + '\n'\
-    + 'Title: ' + a.entries[24].title + '. ' + '\n' + 'Post: ' + a.entries[24].summary + '\n' + a.entries[24].link + ' .\n' + '\n' 
-
+    summary_list = json.dumps([{'title': a.entries[0].title, 'summary': a.entries[0].summary, 'link': a.entries[0].link},
+    {'title': a.entries[1].title, 'summary': a.entries[1].summary, 'link': a.entries[1].link},
+    {'title': a.entries[2].title, 'summary': a.entries[2].summary, 'link': a.entries[2].link},
+    {'title': a.entries[3].title, 'summary': a.entries[3].summary, 'link': a.entries[3].link},
+    {'title': a.entries[4].title, 'summary': a.entries[4].summary, 'link': a.entries[4].link}, 
+    {'title': a.entries[5].title, 'summary': a.entries[5].summary, 'link': a.entries[5].link},
+    {'title': a.entries[6].title, 'summary': a.entries[6].summary, 'link': a.entries[6].link},
+    {'title': a.entries[7].title, 'summary': a.entries[7].summary, 'link': a.entries[7].link},
+    {'title': a.entries[8].title, 'summary': a.entries[8].summary, 'link': a.entries[8].link},
+    {'title': a.entries[9].title, 'summary': a.entries[9].summary, 'link': a.entries[9].link},
+    {'title': a.entries[10].title, 'summary': a.entries[10].summary, 'link': a.entries[10].link},
+    {'title': a.entries[11].title, 'summary': a.entries[11].summary, 'link': a.entries[11].link},
+    {'title': a.entries[12].title, 'summary': a.entries[12].summary, 'link': a.entries[12].link},
+    {'title': a.entries[13].title, 'summary': a.entries[13].summary, 'link': a.entries[13].link},
+    {'title': a.entries[14].title, 'summary': a.entries[14].summary, 'link': a.entries[14].link},
+    {'title': a.entries[15].title, 'summary': a.entries[15].summary, 'link': a.entries[15].link},
+    {'title': a.entries[16].title, 'summary': a.entries[16].summary, 'link': a.entries[16].link},
+    {'title': a.entries[17].title, 'summary': a.entries[17].summary, 'link': a.entries[17].link},
+    {'title': a.entries[18].title, 'summary': a.entries[18].summary, 'link': a.entries[18].link},
+    {'title': a.entries[19].title, 'summary': a.entries[19].summary, 'link': a.entries[19].link},
+    {'title': a.entries[20].title, 'summary': a.entries[20].summary, 'link': a.entries[20].link},
+    {'title': a.entries[21].title, 'summary': a.entries[21].summary, 'link': a.entries[21].link},
+    {'title': a.entries[22].title, 'summary': a.entries[22].summary, 'link': a.entries[22].link},
+    {'title': a.entries[23].title, 'summary': a.entries[23].summary, 'link': a.entries[23].link},
+    {'title': a.entries[24].title, 'summary': a.entries[24].summary, 'link': a.entries[24].link}])
+    
+ 
     soup = BeautifulSoup(summary_list, "lxml")
     text = soup.text
     return text
