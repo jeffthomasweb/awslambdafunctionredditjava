@@ -5,7 +5,7 @@ import lxml
 
 def lambda_handler(event, context):
     a = feedparser.parse("https://reddit.com/r/java.rss")
-    summary_list = 'Title: ' + a.entries[1].title + '. ' + '\n' + 'Post: ' + a.entries[1].summary + '\n' + a.entries[1].link + ' .\n' + '\n'\
+    summary_list = 'Title: ' + a.entries[1].title + '. ' + '\n' + 'Post: ' + a.entries[1].summary + '\n' + a.entries[1].link + ' \n' + '\n'\
     + 'Title: ' + a.entries[2].title + '. ' + '\n' + 'Post: ' + a.entries[2].summary + '\n' + a.entries[2].link + ' \n' + '\n'\
     + 'Title: ' + a.entries[3].title + '. ' + '\n' + 'Post: ' + a.entries[3].summary + '\n' + a.entries[3].link + ' \n' + '\n'\
     + 'Title: ' + a.entries[4].title + '. ' + '\n' + 'Post: ' + a.entries[4].summary + '\n' + a.entries[4].link + ' \n' + '\n'\
